@@ -11,7 +11,7 @@
 </div>
 
 
-<table class="table mt-3 animated fadeIn faster">
+<table  *ngIf="!cargando && heroes.length > 0" class="table mt-3 animated fadeIn faster">
   <thead class="thead-dark">
     <tr>
       <th scope="col">#</th>
@@ -39,7 +39,7 @@
 
 
 
-<div class="alert alert-warning text-center mt-3">
+<div *ngIf="!cargando && heroes.length === 0" class="alert alert-warning text-center mt-3 animated fadeIn faster">
     <h4 class="alert-heading">No hay registros</h4>
     <p>
       <i class="fas fa-exclamation  fa-2x"></i>
@@ -49,7 +49,7 @@
 
 
 
-<div class="alert alert-info text-center mt-3">
+<div *ngIf="cargando" class="alert alert-info text-center mt-3 animated fadeIn faster">
       <h4 class="alert-heading">Cargando </h4>
       <p>
         <i class="fas fa-sync fa-spin fa-2x"></i>
